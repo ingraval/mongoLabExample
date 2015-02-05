@@ -1,6 +1,3 @@
-/**
- * Created by mcart046 on 2/5/15.
- */
 'use strict';
 
 console.log("gpa.js loaded!");

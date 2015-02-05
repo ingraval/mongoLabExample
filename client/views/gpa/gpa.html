@@ -5,9 +5,22 @@
     <title>GPA Calculator</title>
 </head>
 <div ng-include="'components/navbar/navbar.html'"></div>
-    <h1> l;ksjdf;lsiefnms;lkevin</h1>
 <body>
-    <p>Hello world!</p>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item">
+
+            <form ng-submit="addData()">
+                <input ng-model="textField1" type="text" size="20" placeholder="Class Name">
+                <input ng-model="textField2" type="text" size="10" placeholder="Class Grade">
+                <input ng-model="textField3" type="text" size="10" placeholder="Class Credits">
+                <input type="submit" value="submit" class="btn btn-primary">
+            </form>
+
+        </li>
+        <li class="list-group-item" ng-repeat="classes in data">Class: {{}} Grade: {{}} Credits: {{}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
+    </ul>
+</div>
 
 </body>
 </html>
