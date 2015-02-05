@@ -22,9 +22,14 @@ describe('Testing controller: mainCtrl', function(){
     });
 
     it('testing addData function' , function(){
-
         scope.textField2 = 0;
         expect(scope.addData()).toEqual(alert("Invalid Weight, Weight must be larger than 0"))
     });
+
+    it("testing heaviestPet function" , function(){
+        scope.data.push({text: "pet 1", weight: 50});
+        scope.data.push({text: "pet 2", weight: 60});
+        expect(scope.heaviestPet()).toEqual("pet 2 weighs 60")
+    })
 
 });

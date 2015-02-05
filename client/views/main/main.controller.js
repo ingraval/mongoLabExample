@@ -30,7 +30,6 @@ angular.module("appModule")
                 }
             } else {
                 alert("Invalid Weight, Weight must be larger than 0");
-                return;
             }
         };
 
@@ -46,6 +45,24 @@ angular.module("appModule")
 
         $scope.itemsInList = function(){
             return $scope.data.length;
+        };
+
+        $scope.heaviestPet = function(){
+            var toReturn = "";
+            if($scope.data.length == 0){
+                toReturn = "There are no pets in the list.";
+            } else if($scope.data.length == 1){
+                toReturn = $scope.data[0].text + " weighs " + $scope.data[0].weight;
+            } else if($scope.data.length >= 2) {
+                for (var i = 0; i < $scope.data.length - 1; i++) {
+                    if (parseInt($scope.data[i].weight) > parseInt($scope.data[i + 1].weight)) {
+                        toReturn = $scope.data[i].text + " weighs " + $scope.data[i].weight;
+                    } else {
+                        toReturn = $scope.data[i + 1].text + " weighs " + $scope.data[i + 1].weight;
+                    }
+                }
+            }
+            return toReturn;
         };
 
     });
