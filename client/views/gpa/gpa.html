@@ -11,14 +11,14 @@
         <li class="list-group-item">
 
             <form ng-submit="addGpaData()">
-                <input ng-model="textField1" type="text" size="20" placeholder="Class Name">
-                <input ng-model="textField2" type="text" size="10" placeholder="Class Grade">
-                <input ng-model="textField3" type="text" size="10" placeholder="Class Credits">
+                <input ng-model="textField4" type="text" size="20" placeholder="Class Name">
+                <input ng-model="textField5" type="text" size="10" placeholder="Class Grade">
+                <input ng-model="textField6" type="text" size="10" placeholder="Class Credits">
                 <input type="submit" value="submit" class="btn btn-primary">
             </form>
 
         </li>
-        <li class="list-group-item" ng-repeat="classes in data">Class: {{}} Grade: {{}} Credits: {{}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
+        <li class="list-group-item" ng-repeat="info in data1">Class: {{info.class}} Grade: {{info.grade}} Credits: {{info.credits}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
     </ul>
 </div>
 

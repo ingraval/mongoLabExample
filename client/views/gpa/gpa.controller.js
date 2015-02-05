@@ -2,41 +2,41 @@
 
 angular.module('appModule')
     .controller('gpaCtrl', function($scope, $http){
-        $scope.textField1 = "";
-        $scope.textField2 = "";
-        $scope.textField3 = "";
+        $scope.textField4 = "";
+        $scope.textField5 = "";
+        $scope.textField6 = "";
 
-        $scope.data = [];
+        $scope.data1 = [];
 
         $scope.getGpa = function(){
             $http.get('api/gpa').success(function(gpa) {
-                $scope.data = gpa;
+                $scope.data1 = gpa;
             });
         };
 
         $scope.getGpa();
 
         $scope.addGpaData = function(){
-            if($scope.textField2 == "A" ||
-                $scope.textField2 == "B" ||
-                $scope.textField2 == "C" ||
-                $scope.textField2 == "D" ||
-                $scope.textField2 == "F") {
+            if($scope.textField5 == "A" ||
+                $scope.textField5 == "B" ||
+                $scope.textField5 == "C" ||
+                $scope.textField5 == "D" ||
+                $scope.textField5 == "F") {
 
             }else {
                 alert("THIS IS NOT A VALID GRADE!");
                 return;
             }
-            if($scope.textField3 > 0) {
+            if($scope.textField6 > 0) {
 
-                if ($scope.textField1.length >= 1 && $scope.textField2.length >= 1 && $scope.textField3.length >= 1) {
-                    $http.post('api/gpa', {class: $scope.textField1, grade: $scope.textField2, credits: $scope.textField3}).success(function () {
+                if ($scope.textField4.length >= 1 && $scope.textField5.length >= 1 && $scope.textField6.length >= 1) {
+                    $http.post('api/gpa', {class: $scope.textField4, grade: $scope.textField5, credits: $scope.textField6}).success(function () {
                         $scope.getGpa();
                     });
 
-                    $scope.textField1 = "";
-                    $scope.textField2 = "";
-                    $scope.textField3 = "";
+                    $scope.textField4 = "";
+                    $scope.textField5 = "";
+                    $scope.textField6 = "";
 
                 }
             } else {
@@ -45,7 +45,7 @@ angular.module('appModule')
         };
 
         $scope.removeData = function(index){
-            $http.delete('/api/gpa/' + $scope.data[index]._id).success(function(){
+            $http.delete('/api/gpa/' + $scope.data1[index]._id).success(function(){
                 $scope.getGpa();
             });
         };
