@@ -9,20 +9,20 @@ angular.module("appModule")
         // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
         $scope.data = [];
 
-        $scope.getPets = function(){
+        $scope.getGpa = function(){
             $http.get('api/pets').success(function(pets) {
                 $scope.data = pets;
             });
         };
 
-        $scope.getPets();
+        $scope.getGpa();
 
         $scope.addData = function(){
             if($scope.textField2 > 0) {
 
                 if ($scope.textField1.length >= 1 && $scope.textField2.length >= 1) {
                     $http.post('api/pets', {text: $scope.textField1, weight: $scope.textField2}).success(function () {
-                        $scope.getPets();
+                        $scope.getGpa();
                     });
 
                     $scope.textField1 = "";
@@ -35,7 +35,7 @@ angular.module("appModule")
 
         $scope.removeData = function(index){
             $http.delete('/api/pets/' + $scope.data[index]._id).success(function(){
-                $scope.getPets();
+                $scope.getGpa();
             });
         };
 
