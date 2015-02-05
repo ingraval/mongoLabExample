@@ -9,12 +9,13 @@
         <li class="list-group-item">
 
             <form ng-submit="addData()">
-                <input ng-model="textField" type="text" size="50" placeholder="add a new item to the list!">
+                <input ng-model="textField1" type="text" size="50" placeholder="Pet Name!">
+                <input ng-model="textField2" type="text" size="10" placeholder="Pet Weight!">
                 <input type="submit" value="submit" class="btn btn-primary">
                 <span class="floatRight">Items in this list: {{itemsInList()}}</span>
             </form>
 
         </li>
-        <li class="list-group-item" ng-repeat="test in data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
+        <li class="list-group-item" ng-repeat="test in data">Pet Name: {{test.text}} Pet Weight: {{test.weight}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
     </ul>
 </div>

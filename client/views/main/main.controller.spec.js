@@ -14,10 +14,17 @@ describe('Testing controller: mainCtrl', function(){
         mainCtrl = $controller('mainCtrl', {
             $scope: scope
         });
+        scope.textField1 = "firstPet";
     }));
 
     it('dummy test should pass', function(){
         expect(true).toEqual(true);
+    });
+
+    it('testing addData function' , function(){
+
+        scope.textField2 = 0;
+        expect(scope.addData()).toEqual(alert("Invalid Weight, Weight must be larger than 0"))
     });
 
 });
