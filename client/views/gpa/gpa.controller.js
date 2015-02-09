@@ -50,7 +50,7 @@ angular.module('appModule')
             });
         };
 
-        $scope.toLetter = function(letter){
+        $scope.toNumber = function(letter){
             var toReturn;
             if(letter == "A"){
                 toReturn = 4;
@@ -64,6 +64,19 @@ angular.module('appModule')
                 toReturn = 0;
             }
             return toReturn;
+        }
+
+        $scope.totalGpa = function(){
+            var totalScore = 0;
+            var totalCredits = 0;
+
+            for(var i = 0; i < $scope.data1.length; i++){
+                var grade = $scope.toNumber($scope.data1[i].grade);
+                var credits = parseInt($scope.data1[i].credits);
+                totalScore += credits*grade;
+                totalCredits += credits;
+            }
+            return totalScore/totalCredits;
         }
 
     });
