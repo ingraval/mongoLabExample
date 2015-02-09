@@ -22,5 +22,9 @@ describe('Testing controller: gpaCtrl', function(){
         expect(true).toEqual(true);
     });
 
+    it('convert letter grades to numbers', function(){
+        expect(toLetter("A")).toEqual(4);
+    })
+
 });
 
