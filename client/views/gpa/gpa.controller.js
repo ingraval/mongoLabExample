@@ -50,6 +50,20 @@ angular.module('appModule')
             });
         };
 
-
+        $scope.toLetter = function(letter){
+            var toReturn;
+            if(letter == "A"){
+                toReturn = 4;
+            } else if (letter == "B"){
+                toReturn = 3;
+            } else if (letter == "C"){
+                toReturn = 2;
+            } else if (letter == "D"){
+                toReturn = 1;
+            } else if (letter == "F"){
+                toReturn = 0;
+            }
+            return toReturn;
+        }
 
     });

@@ -23,7 +23,7 @@ describe('Testing controller: gpaCtrl', function(){
     });
 
     it('convert letter grades to numbers', function(){
-        expect(toLetter("A")).toEqual(4);
+        expect(scope.toLetter("A")).toEqual(4);
     })
 
 });
