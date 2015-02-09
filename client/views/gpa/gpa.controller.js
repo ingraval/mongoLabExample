@@ -9,7 +9,7 @@ angular.module('appModule')
         $scope.data1 = [];
 
         $scope.getGpa = function(){
-            $http.get('api/gpa').success(function(gpa) {
+            $http.get('api/gpas').success(function(gpa) {
                 $scope.data1 = gpa;
             });
         };
@@ -30,7 +30,7 @@ angular.module('appModule')
             if($scope.textField6 > 0) {
 
                 if ($scope.textField4.length >= 1 && $scope.textField5.length >= 1 && $scope.textField6.length >= 1) {
-                    $http.post('api/gpa', {class: $scope.textField4, grade: $scope.textField5, credits: $scope.textField6}).success(function () {
+                    $http.post('api/gpas', {class: $scope.textField4, grade: $scope.textField5, credits: $scope.textField6}).success(function () {
                         $scope.getGpa();
                     });
 
@@ -45,7 +45,7 @@ angular.module('appModule')
         };
 
         $scope.removeData = function(index){
-            $http.delete('/api/gpa/' + $scope.data1[index]._id).success(function(){
+            $http.delete('/api/gpas/' + $scope.data1[index]._id).success(function(){
                 $scope.getGpa();
             });
         };

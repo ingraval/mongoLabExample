@@ -15,12 +15,12 @@ var Gpa = mongoose.model('Gpa', {
 // =====================================================
 
 exports.index = function(req, res) {
-    Gpa.find(function (err, gpa) {
+    Gpa.find(function (err, gpas) {
         if (err) {
             console.log("Error getting data from database");
             res.send(err)
         } else {
-            res.json(gpa); // return results
+            res.json(gpas); // return results
         }
     });
 };
@@ -30,12 +30,12 @@ exports.create = function(req, res) {
         if (err) {
             res.send(err);
         } else {
-            Gpa.find(function (err, gpa) {
+            Gpa.find(function (err, gpas) {
                 if (err) {
                     res.send(err);
                 }
 
-                res.json(gpa);
+                res.json(gpas);
             });
         }
     });

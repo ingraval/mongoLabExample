@@ -45,6 +45,8 @@ var options = {
 // API Routes
 app.use('/api/pets', require('./api/pets'));
 
+app.use('/api/gpas', require('./api/gpas'));
+
 // Non-API routes
 app.get('/*', function(req, res){
     res.sendFile('index.html', options);
